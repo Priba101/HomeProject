@@ -1,0 +1,14 @@
+<div class="jumbotron jumbotron-fluid">
+  <h1 class="display-4">Todo for today</h1>
+  <p class="lead"><strong><%= @todo.todo %></strong></p>
+  <hr class="my-4">
+  <div>
+  <%= link_to "Edit", edit_todo_path(@todo), class:"btn btn-secondary" %>
+  <%= link_to "Delete",todo_path(@todo),
+        data:{
+          turbo_method: :delete,
+          turbo_confirm:"Are you sure?"
+        },class:"btn btn-danger" %>
+  <%= link_to "Back to todos", todos_path, class:"btn btn-secondary" %>
+</div>
+</div>
